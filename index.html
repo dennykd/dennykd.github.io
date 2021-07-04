@@ -10,6 +10,8 @@
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- My CSS -->
     <link rel="stylesheet" href="style.css" />
     <title>My Portfolio | Kadek Denny</title>
@@ -45,7 +47,7 @@
     <section class="jumbotron text-center">
       <img src="img/denny.jpg" alt="my photo" width="200" class="rounded-circle img-thumbnail" />
       <h1 class="display-4">Kadek Denny</h1>
-      <p class="lead">Technician | Designer</p>
+      <p class="lead"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -64,10 +66,10 @@
           </div>
         </div>
         <div class="row justify-content-center fs-5 text-center">
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-right" data-aos-duration="1500">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, ad? Deserunt fugiat ipsam labore expedita magnam, consequatur perspiciatis accusantium? Fugit!</p>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="300">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere ex consequatur qui voluptas. Nemo dolor laudantium accusamus alias! Voluptate nulla iure ab nostrum magnam repudiandae!</p>
           </div>
         </div>
@@ -91,7 +93,7 @@
         </div>
         <div class="row">
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-left" data-aos-duration="1000">
               <img src="img/1.jpg" class="card-img-top" alt="Gallery 1" />
               <div class="card-body">
                 <p class="card-text text-center">Waves</p>
@@ -99,7 +101,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200">
               <img src="img/2.jpg" class="card-img-top" alt="Gallery 2" />
               <div class="card-body">
                 <p class="card-text text-center">Mountain</p>
@@ -107,7 +109,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="300">
               <img src="img/3.jpg" class="card-img-top" alt="Gallery 3" />
               <div class="card-body">
                 <p class="card-text text-center">Town Road</p>
@@ -133,7 +135,7 @@
             <h2>Contact Me</h2>
           </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" data-aos="zoom-in">
           <div class="col-6">
             <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
               <strong>Berhasil!</strong> Pesan anda sudah terkirim.
@@ -177,6 +179,23 @@
     <!-- Akhir Footer -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/TextPlugin.min.js"></script>
+
+    <script>
+      gsap.to(".lead", { duration: 2, delay: 1, text: "Technician | Designer" });
+      gsap.registerPlugin(TextPlugin);
+      gsap.from(".jumbotron img", { duration: 1, y: -100, opacity: 0, ease: "bounce" });
+      gsap.from(".display-4", { duration: 1, x: -100, opacity: 0, delay: 0.5, ease: "back" });
+    </script>
+
     <script>
       const scriptURL = "https://script.google.com/macros/s/AKfycbyEV0YEaRZ17M2R_QnTB4b_9fKCWHH8p7QEma0B_p13JQgqdKscPcUUV6UpSEJCq5f5/exec";
       const form = document.forms["portfolio-contact-form"];
